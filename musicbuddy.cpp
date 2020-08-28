@@ -3,6 +3,8 @@
 
 Chord::Chord(chromaticSteps root, chordTypes type) : root{root}, type{type}
 {
+    std::cout << '\n' << "Ctor Chord" << '\n';
+
     switch(type){
         case MAJOR: third = ++++++++root; 
                     fifth = ++++++root;
@@ -14,7 +16,7 @@ Chord::Chord(chromaticSteps root, chordTypes type) : root{root}, type{type}
 }
 
 Chord::~Chord(){
-
+    std::cout << '\n' << "Dtor Chord" << '\n';
 }
 
 Scale::Scale(chromaticSteps key, int size) : key{key}, size{size},
@@ -34,6 +36,10 @@ Scale::~Scale(){
 
 int Scale::getSize(){
     return this -> size;
+}
+
+void Scale::orTest(){
+    std::cout << '\n' << "Base" << '\n';
 }
 
 
@@ -79,6 +85,10 @@ void MinorScale::printChords(){
     std::cout << std::endl;
 }
 
+void MinorScale::orTest(){
+    std::cout << '\n' << "Minor" << '\n';
+}
+
 MajorScale::MajorScale(chromaticSteps key) : Scale(key, 7)
 {
     std::cerr << "Ctor MajorScale" << std::endl;
@@ -116,6 +126,10 @@ void MajorScale::printChords(){
         for(int i = 0; i < this->size; ++i)
         std::cout << chords[i] << " ";
     std::cout << std::endl;
+}
+
+void MajorScale::orTest(){
+    std::cout << '\n' << "Major" << '\n';
 }
 
 std::ostream& operator<<(std::ostream& stream, const chromaticSteps& step){

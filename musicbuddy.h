@@ -32,6 +32,7 @@ public:
     virtual void printChords() = 0;
     chromaticSteps getStep(int);
     int getSize();
+    void orTest();
 
 };
 
@@ -42,6 +43,7 @@ public:
     chromaticSteps getKey();
     void printScale();
     void printChords();
+    void orTest();
 };
 
 class MajorScale : public Scale {
@@ -51,6 +53,7 @@ public:
     chromaticSteps getKey();
     void printScale();
     void printChords();
+    void orTest();
 };
 
 std::ostream& operator<<(std::ostream&, const Chord&);
