@@ -5,7 +5,7 @@ int main(){
     MajorScale cMajor {chromaticSteps::C};
     MinorScale aMinor {chromaticSteps::A};
     Chord cDur;
-    Chord aMoll{A, MINOR};
+    Chord aMoll{chromaticSteps::A, chordTypes::MINOR};
     Scale *majPtr, *minPtr;
     majPtr = &cMajor;
     minPtr = &aMinor;
@@ -23,4 +23,5 @@ int main(){
 
     aMinor.printScale();
     cMajor.printScale();
+    cMajor.printChords();
 }
